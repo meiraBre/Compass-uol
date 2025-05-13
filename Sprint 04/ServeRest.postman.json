@@ -1,0 +1,3011 @@
+{
+	"info": {
+		"_postman_id": "01ffbe2b-0e9f-4fb8-bdc6-c3fb6ccc7cf4",
+		"name": "ServeRest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44579864"
+	},
+	"item": [
+		{
+			"name": "API ServeRest",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Post",
+							"item": [
+								{
+									"name": "Login com usuário válido",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}login",
+											"host": [
+												"{{baseURL}}login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}login",
+													"host": [
+														"{{baseURL}}login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "7db816a9b6b68de5de1479b3f98e3fb6;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Wed, 07 May 2025 23:19:41 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "265"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Login realizado com sucesso\",\n    \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NjU5OTgxLCJleHAiOjE3NDY2NjA1ODF9.r5Bbqh9XOF_2cblyizm1Xk36icdVzi0Y_MFQhlBK5pQ\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Login com email inexistente",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseURL}}login",
+											"host": [
+												"{{baseURL}}login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 401",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"fulan@qa.com\",\r\n  \"password\": \"teste\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}login",
+													"host": [
+														"{{baseURL}}login"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "affebece00134567f6fb2ac5e2ce991b;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:58:58 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "48"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Email e/ou senha inválidos\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Login com senha inválida",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"0000\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseURL}}login",
+											"host": [
+												"{{baseURL}}login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 401",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"0000\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}login",
+													"host": [
+														"{{baseURL}}login"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "30fd63978f271f6e19ec0ec1f872203e"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:57:45 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "48"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Email e/ou senha inválidos\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Teste de validade do token",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n} ",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}login",
+											"host": [
+												"{{baseURL}}login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Token de teste",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n} ",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}login",
+													"host": [
+														"{{baseURL}}login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "bf14461dc87b37994a2c807c2a339e52"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:33:19 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "265"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Login realizado com sucesso\",\n    \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIxOTk5LCJleHAiOjE3NDY3MjI1OTl9.h1oMTKgN2O6w260MjgnsbT8QOS_7XstrD48kB0P5zVA\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Usuários",
+					"item": [
+						{
+							"name": "CRUD de cadastro de vendedores",
+							"item": [
+								{
+									"name": "Criar usuário",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Bruna Correia\",\r\n  \"email\": \"bruna@qa.com.br\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Bruna Correia\",\r\n  \"email\": \"bruna@qa.com.br\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}\r\n\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "ced6a333499a1725218984893bfae9c4"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 23:43:38 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"TBs6LUBZelLCtopP\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Atualizar usuário",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Bruna Correia de Souza\",\r\n  \"email\": \"bruna@qa.com.br\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios/TBs6LUBZelLCtopP",
+											"host": [
+												"{{baseURL}}usuarios"
+											],
+											"path": [
+												"TBs6LUBZelLCtopP"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Bruna Correia de Souza\",\r\n  \"email\": \"bruna@qa.com.br\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}\r\n\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios/TBs6LUBZelLCtopP",
+													"host": [
+														"{{baseURL}}usuarios"
+													],
+													"path": [
+														"TBs6LUBZelLCtopP"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "750072e6cc1059327223844cc898bc04;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 23:46:18 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "50"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Registro alterado com sucesso\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Listar usuários",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "fcb39e54bce94768bb482f63f190f71c"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 23:47:39 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "26086"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"quantidade\": 124,\n    \"usuarios\": [\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746725364510@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"0xbvRSt4ql3jTR8S\"\n        },\n        {\n            \"nome\": \"Qa da Silva \",\n            \"email\": \"QAsilvasalro@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"1niK1huR2ZURS2PG\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste181793@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"2AsXbRz50NfzWD7y\"\n        },\n        {\n            \"nome\": \"Ciclano\",\n            \"email\": \"testemail2@qa.com\",\n            \"password\": \"012345678\",\n            \"administrador\": \"true\",\n            \"_id\": \"2j0vhqjePUFVMNid\"\n        },\n        {\n            \"nome\": \"Joao Silva\",\n            \"email\": \"joao@hotmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"32LaJROsbxEwGYNZ\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746735101433@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"3NEqfdAhImxlIhzT\"\n        },\n        {\n            \"nome\": \"Nome Sobrenome\",\n            \"email\": \"nome@dominio.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"3NhDmUdxRKhHOqLl\"\n        },\n        {\n            \"nome\": \"   \",\n            \"email\": \"Kevon.Dooley3@hotmail.com\",\n            \"password\": \"senha\",\n            \"administrador\": \"true\",\n            \"_id\": \"3w2nvPxk2Xq3UxV3\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste1746734633136@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"4X78L1j9e799g86v\"\n        },\n        {\n            \"nome\": \"Rodrigo\",\n            \"email\": \"rodrigolimacompass5216@gmail.com\",\n            \"password\": \"senha01\",\n            \"administrador\": \"true\",\n            \"_id\": \"4qmbkLETK4RD2JNs\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746734632053@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"5FenUwYoDSvfG0eK\"\n        },\n        {\n            \"nome\": \"Henrietta Stracke\",\n            \"email\": \"Marietta_Herman58@gmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"6HkyAWqxTlL2oSn3\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste67837@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"76Ze10dJv8YQWdU1\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746735152619@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"9NwaVtjlHTa6ELxu\"\n        },\n        {\n            \"nome\": \"cilicio\",\n            \"email\": \"cilicio@gmail.com\",\n            \"password\": \"cilicio123\",\n            \"administrador\": \"true\",\n            \"_id\": \"BFMirIVyxZwEpz8u\"\n        },\n        {\n            \"nome\": \"Fulano da Silva\",\n            \"email\": \"beltran@qa.com.br\",\n            \"password\": \"1234\",\n            \"administrador\": \"true\",\n            \"_id\": \"CN5rQwQN77ExRY68\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746735810864@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"CWSg1WDbM72hdWsk\"\n        },\n        {\n            \"nome\": \"Rodrigo\",\n            \"email\": \"rodrigolimacompass01@gmail.com\",\n            \"password\": \"senha01\",\n            \"administrador\": \"true\",\n            \"_id\": \"DXLiStc5kKoxli8e\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746734751113@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"E6fH3zhkrGCb5rPP\"\n        },\n        {\n            \"nome\": \"Caso de teste 6\",\n            \"email\": \"Brandi_Douglas@yahoo.com\",\n            \"password\": \"12345678910\",\n            \"administrador\": \"true\",\n            \"_id\": \"EaWXtG6TQUFcmNJk\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique0@2.com\",\n            \"password\": \"testando43222\",\n            \"administrador\": \"true\",\n            \"_id\": \"EqCzoKzjVlY5NbgU\"\n        },\n        {\n            \"nome\": \"Kendra Tillman\",\n            \"email\": \"Ladarius.Haley44@yahoo.com\",\n            \"password\": \" \",\n            \"administrador\": \"true\",\n            \"_id\": \"Eri0goKfeu8lfXxS\"\n        },\n        {\n            \"nome\": \"s\",\n            \"email\": \"lara@gmail.com\",\n            \"password\": \"sabrina123\",\n            \"administrador\": \"true\",\n            \"_id\": \"EtSiv48pKfatovv3\"\n        },\n        {\n            \"nome\": \"Rodrigo\",\n            \"email\": \"rodrigolimacompass01@compass.com\",\n            \"password\": \"senha01\",\n            \"administrador\": \"true\",\n            \"_id\": \"FNwfTD7oHf4BaAvk\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique@qa.com.br\",\n            \"password\": \"testando\",\n            \"administrador\": \"true\",\n            \"_id\": \"GIkgscWJtlzuUTqv\"\n        },\n        {\n            \"nome\": \"Maria\",\n            \"email\": \"beltran@a.com.br\",\n            \"password\": \"12345678910\",\n            \"administrador\": \"true\",\n            \"_id\": \"GO06DABvRInvKKYR\"\n        },\n        {\n            \"nome\": \"Ciclano novo\",\n            \"email\": \"usuario_79783@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"I1YxhHgx0n7SvpSF\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste672467@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"JAvQ9LDg23KwHEKP\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto605656@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"K5yjgEspN42QQdug\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746734745029@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"K9jw3cNFCUISjAqw\"\n        },\n        {\n            \"nome\": \"NovoPUT\",\n            \"email\": \"put@empresa.com\",\n            \"password\": \"senha10\",\n            \"administrador\": \"true\",\n            \"_id\": \"LAdaYXJmlYI2eJvF\"\n        },\n        {\n            \"nome\": \"João Atualizado\",\n            \"email\": \"jo@email.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"LwxXMskhJ3fwlo9S\"\n        },\n        {\n            \"nome\": \"Julia da Silva\",\n            \"email\": \"beltrana@gmail.com\",\n            \"password\": \"teste1\",\n            \"administrador\": \"true\",\n            \"_id\": \"M7tkrIz5jziFk95I\"\n        },\n        {\n            \"nome\": \"Fulano QA 917084\",\n            \"email\": \"usuario917084@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"NNhkAkRXX6XRg4G2\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste873585@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"NTPQk9Pm8vWCAx1X\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto{{randomInt}}@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"NqNNSMAicnVEyvPU\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste194678@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"OPosK5l0iIKgia2c\"\n        },\n        {\n            \"nome\": \"Fulano QA 990015\",\n            \"email\": \"usuario990015@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"OfyN824Bxl9OV04e\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste1746734746119@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"PAGPS0nUNmjDH42j\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste769532@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"PB8IefAUySQtNBbR\"\n        },\n        {\n            \"nome\": \"Maria\",\n            \"email\": \"maria@teste.com\",\n            \"password\": \"123\",\n            \"administrador\": \"true\",\n            \"_id\": \"PMfde6K2YzKxkJE2\"\n        },\n        {\n            \"nome\": \"Comum\",\n            \"email\": \"comum@empresa.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"false\",\n            \"_id\": \"PRfqrc2vaF9DQhDK\"\n        },\n        {\n            \"nome\": \"Luis Teste\",\n            \"email\": \"luis@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"PiManmJjrAEfJAzD\"\n        },\n        {\n            \"nome\": \"Ciclano\",\n            \"email\": \"Cordell_Hoppe74@hotmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"QFbnspJ3CFiSrPRy\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746735007213@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"QlIT5Xkh5d964c9b\"\n        },\n        {\n            \"nome\": \"Fulano QA 685515\",\n            \"email\": \"usuario685515@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"QqYsKEWkIWEDd2WJ\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto205479@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"R43p9lcbWnjyEJFd\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique03@2.com\",\n            \"password\": \"tes123\",\n            \"administrador\": \"true\",\n            \"_id\": \"RZ8CkyxjNZcPioKJ\"\n        },\n        {\n            \"nome\": \"Bruna Correia de Souza\",\n            \"email\": \"bruna@qa.com.br\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"TBs6LUBZelLCtopP\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste1746734642064@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"TTyAqeHVfM2yFRJZ\"\n        },\n        {\n            \"nome\": \"Fulano da Silva\",\n            \"email\": \"beltrano@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"TmvtzDnht1SgW6lC\"\n        },\n        {\n            \"nome\": \"Julia da Silva\",\n            \"email\": \"julia@gmail.com\",\n            \"password\": \"teste1\",\n            \"administrador\": \"true\",\n            \"_id\": \"VF0y6My4O6c5xZxy\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste1746725490846@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"VNCnumT4Mfey3s3C\"\n        },\n        {\n            \"nome\": \"Ciclano\",\n            \"email\": \"Willie_Paucek@yahoo.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"VTgfHseZrttjQQ5R\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste1746734632609@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"VkDqiQnh1oCUQq1s\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique012@2.com\",\n            \"password\": \"testeteste1\",\n            \"administrador\": \"true\",\n            \"_id\": \"WA3B8vHZSedQOyso\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746725490025@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"WW9isJqpAfYHPgVK\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746735153451@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"XyZKhnxKsdXTzpOb\"\n        },\n        {\n            \"nome\": \"Caso de teste 7\",\n            \"email\": \"Joana_Towne@hotmail.com\",\n            \"password\": \"1234\",\n            \"administrador\": \"true\",\n            \"_id\": \"Y5VAotm7z1iLziS9\"\n        },\n        {\n            \"nome\": \"Fulano QA 189031\",\n            \"email\": \"usuario189031@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"Y6keHoeRUcZMPblP\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique2@2.com\",\n            \"password\": \"testeteste\",\n            \"administrador\": \"true\",\n            \"_id\": \"YCXt8m7PlGHekVTo\"\n        },\n        {\n            \"nome\": \"Usuario\",\n            \"email\": \"usuario@email.com\",\n            \"password\": \"Senha\",\n            \"administrador\": \"true\",\n            \"_id\": \"YKC2kxMs19NH69pL\"\n        },\n        {\n            \"nome\": \"Usuario Teste\",\n            \"email\": \"usuario_teste@dominio.com\",\n            \"password\": \"senha123\",\n            \"administrador\": \"true\",\n            \"_id\": \"YmrHejC9xH92apvx\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste859824@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"ZkuJqjJTGCjNAnXz\"\n        },\n        {\n            \"nome\": \"Novo Usuário\",\n            \"email\": \"novo@teste.com\",\n            \"password\": \"54321\",\n            \"administrador\": \"true\",\n            \"_id\": \"ZqPXD6p3w6ISXgyr\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique@gmail.com\",\n            \"password\": \"testando\",\n            \"administrador\": \"true\",\n            \"_id\": \"ZyGlsSGhrRtnwT36\"\n        },\n        {\n            \"nome\": \"Annette Morar DVM\",\n            \"email\": \"Deshaun.Emard@yahoo.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"aGWo7XsE2CF0V3Bx\"\n        },\n        {\n            \"nome\": \"User5496\",\n            \"email\": \"user4646@qa.com\",\n            \"password\": \"Pass3333\",\n            \"administrador\": \"false\",\n            \"_id\": \"acTZQwDUgvpFhY8y\"\n        },\n        {\n            \"nome\": \"Caso de teste 3\",\n            \"email\": \"Berge@gmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"affv24Px2uC7kQb7\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746735102265@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"clehUXsCbi5DSyqH\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746725363651@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"d4QqP8vJH7NDI1xJ\"\n        },\n        {\n            \"nome\": \"Rodrigo\",\n            \"email\": \"rodrigolimacompass02@gmail.com\",\n            \"password\": \"senha01\",\n            \"administrador\": \"true\",\n            \"_id\": \"dDWNNPGpwUlzZVIm\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto543600@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"dRhkHEMDySfBjsz0\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746735953693@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"e52L6NK777stdUZt\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique12@2.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"e9cnd2SYYQxpTwJc\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"eu@qa.com.br\",\n            \"password\": \"testando\",\n            \"administrador\": \"true\",\n            \"_id\": \"e9gCbsvkso4lLtGG\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1234567890@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"flg8i6ow0Gr5hkeT\"\n        },\n        {\n            \"nome\": \"Valido\",\n            \"email\": \"valido@empresa.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"gHT0sqUdf5Syg0Db\"\n        },\n        {\n            \"nome\": \"Fulano\",\n            \"email\": \"beltran@q.com.br\",\n            \"password\": \"12345678910\",\n            \"administrador\": \"true\",\n            \"_id\": \"hJHqV0kko0muBxdg\"\n        },\n        {\n            \"nome\": \"Gregory Raynor\",\n            \"email\": \"testuser@yahoo.com\",\n            \"password\": \"SenhaForte\",\n            \"administrador\": \"false\",\n            \"_id\": \"hpyvmIc4Rs8DHv4X\"\n        },\n        {\n            \"nome\": \"Fulana da Silva\",\n            \"email\": \"beltrano2@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"iN6pmyQ9spgO72k7\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique@hotmail.com\",\n            \"password\": \"testando\",\n            \"administrador\": \"true\",\n            \"_id\": \"idWDO1gXL0Xn3vqH\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"usuarioteste960097@qa.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"ihKQHSPC66Xhnd1L\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique1@2.com\",\n            \"password\": \"t\",\n            \"administrador\": \"true\",\n            \"_id\": \"jIgxZHAUKVbu35rr\"\n        },\n        {\n            \"nome\": \"Gilberto Watsica\",\n            \"email\": \"Trever62@hotmail.com\",\n            \"password\": \" \",\n            \"administrador\": \"true\",\n            \"_id\": \"jKmqkAafNDe60CIN\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746735811694@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"jcuYO2SIqdLjMHyK\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto764560@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"l2JrMX8WQKXVBpdD\"\n        },\n        {\n            \"nome\": \"s\",\n            \"email\": \"sabrina@gmail.com\",\n            \"password\": \"sabrina123\",\n            \"administrador\": \"true\",\n            \"_id\": \"l86ArtSIjXcNR6OB\"\n        },\n        {\n            \"nome\": \"Fulana da Silva\",\n            \"email\": \"beltrano1@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"lxsN1VG86Ag7tgys\"\n        },\n        {\n            \"nome\": \"User7820\",\n            \"email\": \"user4220@qa.com\",\n            \"password\": \"Pass3545\",\n            \"administrador\": \"false\",\n            \"_id\": \"nmhIoWjryXf6drSg\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique02@2.com\",\n            \"password\": \"test\",\n            \"administrador\": \"true\",\n            \"_id\": \"nt4FiPBIXb1unwAv\"\n        },\n        {\n            \"nome\": \"Lora Goodwin\",\n            \"email\": \"testadmin@yahoo.com\",\n            \"password\": \"SenhaForte2\",\n            \"administrador\": \"true\",\n            \"_id\": \"o0Nv2ICfO7RyJ3Rf\"\n        },\n        {\n            \"nome\": \"João\",\n            \"email\": \"nome@hotmail.com\",\n            \"password\": \"tst\",\n            \"administrador\": \"true\",\n            \"_id\": \"p6jCf4fb1wEzyg3u\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto137982@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"pE9gIzFVstlMjRHc\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746735010227@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"pXMyX6viEjl2HchL\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746735954607@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"ppqcplABeqjrQyJa\"\n        },\n        {\n            \"nome\": \"Usuario\",\n            \"email\": \"usuario@gmail.com\",\n            \"password\": \"Senha\",\n            \"administrador\": \"true\",\n            \"_id\": \"psFBXE9rNojPMyXP\"\n        },\n        {\n            \"nome\": \"Caso de teste 6\",\n            \"email\": \"Viva90@gmail.com\",\n            \"password\": \"12345678910\",\n            \"administrador\": \"true\",\n            \"_id\": \"q6MSwPmzJEnc8Ctu\"\n        },\n        {\n            \"nome\": \"Julia da Silva\",\n            \"email\": \"julia@hotmail.com\",\n            \"password\": \"teste1\",\n            \"administrador\": \"true\",\n            \"_id\": \"qB1fQtZ63b9E3bIw\"\n        },\n        {\n            \"nome\": \"Ana\",\n            \"email\": \"Anateste@teste.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"qTQ4ick6SPLCGer5\"\n        },\n        {\n            \"nome\": \"Camille Batz\",\n            \"email\": \"testuserlm@yahoo.com\",\n            \"password\": \"SenhaForte\",\n            \"administrador\": \"false\",\n            \"_id\": \"qZPOXnIWd4K32jRo\"\n        },\n        {\n            \"nome\": \"Fulana da Silva\",\n            \"email\": \"beltrano3@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"qbBaks7JD7iV6GLZ\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"euRaique@qa.com.br\",\n            \"password\": \"testando\",\n            \"administrador\": \"true\",\n            \"_id\": \"quWMWqD0ROtTp5io\"\n        },\n        {\n            \"nome\": \"Fulano QA 1594\",\n            \"email\": \"usuario1594@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"rV0Xdg4GbnGKcKgh\"\n        },\n        {\n            \"nome\": \"Ana Silva\",\n            \"email\": \"Ana@teste.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"rnTfCuvTlii0cDF7\"\n        },\n        {\n            \"nome\": \"Caso de teste 7\",\n            \"email\": \"Mikel59@hotmail.com\",\n            \"password\": \"1234\",\n            \"administrador\": \"true\",\n            \"_id\": \"sG8AkKGkX45QgOTZ\"\n        },\n        {\n            \"nome\": \"João\",\n            \"email\": \"nome@gmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"saeyzdSw5KmNQEMl\"\n        },\n        {\n            \"nome\": \"Joao Silva\",\n            \"email\": \"joao@gmail.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"t7ZdfHMIhQ28pyFy\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"teste@gmail.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"tESRjzy1Bi9sN0Ob\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"novo1746734646937@qa.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"ttbrKFJGYQorgn6j\"\n        },\n        {\n            \"nome\": \"   \",\n            \"email\": \"Estelle31@gmail.com\",\n            \"password\": \"senha\",\n            \"administrador\": \"true\",\n            \"_id\": \"uJl1YSuSAkSJAF7f\"\n        },\n        {\n            \"nome\": \"Fulana da Silva\",\n            \"email\": \"beltrana@qa.com.br\",\n            \"password\": \"teste1\",\n            \"administrador\": \"true\",\n            \"_id\": \"vaQ7mZ5Q2NgZiNxt\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"w3mgLnAzL49wmuio\"\n        },\n        {\n            \"nome\": \"cilicio\",\n            \"email\": \"lal@gmail.com\",\n            \"password\": \"cilicio123\",\n            \"administrador\": \"true\",\n            \"_id\": \"w6T94SM5BHSjlApj\"\n        },\n        {\n            \"nome\": \"Fulano QA 136258\",\n            \"email\": \"usuario136258@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"wacK9vtXaI7uzzib\"\n        },\n        {\n            \"nome\": \"Fulano novo\",\n            \"email\": \"fulano16@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"xVK5iZu8no20N6To\"\n        },\n        {\n            \"nome\": \"Raique\",\n            \"email\": \"raique04@a.com\",\n            \"password\": \"test\",\n            \"administrador\": \"true\",\n            \"_id\": \"y7Lh8dHPl7sk8GDb\"\n        },\n        {\n            \"nome\": \"João Atualizado\",\n            \"email\": \"joao@email.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"yRyO9LTw7awVgBmA\"\n        },\n        {\n            \"nome\": \"Fulano QA 783020\",\n            \"email\": \"291839@gmail.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"ylQquP82b6I43Oi4\"\n        },\n        {\n            \"nome\": \"Rodrigo\",\n            \"email\": \"rodrigolimacompass10@gmail.com\",\n            \"password\": \"senha01\",\n            \"administrador\": \"true\",\n            \"_id\": \"yu223fpVEnuKOLS6\"\n        },\n        {\n            \"nome\": \"Teste\",\n            \"email\": \"senha1746734640979@qa.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"z2a9RVmbdllHD6LQ\"\n        },\n        {\n            \"nome\": \"Fulano QA 265112\",\n            \"email\": \"usuario265112@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"zCkOVAzEDUFNk5hB\"\n        },\n        {\n            \"nome\": \"Fulano QA 685100\",\n            \"email\": \"usuario685100@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"false\",\n            \"_id\": \"zRpPijsy2Su6issT\"\n        },\n        {\n            \"nome\": \"Fulano Produto\",\n            \"email\": \"produto615188@teste.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"zmnAr4TiFtJBlekK\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Deletar usuário",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}usuarios/TBs6LUBZelLCtopP",
+											"host": [
+												"{{baseURL}}usuarios"
+											],
+											"path": [
+												"TBs6LUBZelLCtopP"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}usuarios/TBs6LUBZelLCtopP",
+													"host": [
+														"{{baseURL}}usuarios"
+													],
+													"path": [
+														"TBs6LUBZelLCtopP"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "b42889e89625bde91e41044407442af3;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 23:49:27 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "51"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Registro excluído com sucesso\"\n}"
+										}
+									]
+								}
+							],
+							"description": "(CRIAR, ATUALIZAR, LISTAR E DELETAR)"
+						},
+						{
+							"name": "Get",
+							"item": [
+								{
+									"name": "Buscar usuário com ID inexistente",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}usuarios/vaQ7mZ5Q2NgZimxt",
+											"host": [
+												"{{baseURL}}usuarios"
+											],
+											"path": [
+												"vaQ7mZ5Q2NgZimxt"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 401",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseURL}}usuarios/vaQ7mZ5Q2NgZimxt",
+													"host": [
+														"{{baseURL}}usuarios"
+													],
+													"path": [
+														"vaQ7mZ5Q2NgZimxt"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "e26751a89ffb5acd88e7ce752669b6a6"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:13:58 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "45"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Usuário não encontrado\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Listar usuários",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Post",
+							"item": [
+								{
+									"name": "Criando usuário",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Fulana da Silva\",\r\n  \"email\": \"beltrana@qa.com.br\",\r\n  \"password\": \"teste1\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Fulana da Silva\",\r\n  \"email\": \"beltrana@qa.com.br\",\r\n  \"password\": \"teste1\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "755d899a0d5e3284f7916d7d39a6bb38;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 12:53:28 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"vaQ7mZ5Q2NgZiNxt\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Criar usuário com email já cadastrado",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Fulano da Silva\",\r\n  \"email\": \"beltrano@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Fulano da Silva\",\r\n  \"email\": \"beltrano@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "11f15b0c16d2b3638346af20daf94931;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 12:55:31 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "53"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Este email já está sendo usado\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Criar usuário com 4 ou 11 caracteres na senha",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Fulano da Silva\",\r\n  \"email\": \"beltran@qa.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "BUG 001 - Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Fulano da Silva\",\r\n  \"email\": \"beltran@qa.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "d3f13db3d041aa4d25cb5777bde8e251"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 12:59:24 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"CN5rQwQN77ExRY68\"\n}"
+										},
+										{
+											"name": "BUG 002 - Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Maria\",\r\n  \"email\": \"beltran@a.com.br\",\r\n  \"password\": \"12345678910\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "f739df7421af689fa9e0f4756f6464f2"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 21:10:45 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"GO06DABvRInvKKYR\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Criar usuário com email de dominio não permitido",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Julia da Silva\",\r\n  \"email\": \"julia@hotmail.com\",\r\n  \"password\": \"teste1\",\r\n  \"administrador\": \"true\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}usuarios",
+											"host": [
+												"{{baseURL}}usuarios"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "BUG 003 - Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Julia da Silva\",\r\n  \"email\": \"julia@hotmail.com\",\r\n  \"password\": \"teste1\",\r\n  \"administrador\": \"true\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "29bea936b60dc01989b203dc2f070cda;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:10:58 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"qB1fQtZ63b9E3bIw\"\n}"
+										},
+										{
+											"name": "BUG 004 - Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Julia da Silva\",\r\n  \"email\": \"julia@gmail.com\",\r\n  \"password\": \"teste1\",\r\n  \"administrador\": \"true\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}usuarios",
+													"host": [
+														"{{baseURL}}usuarios"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "bc6ae9a246101c0ae74d7bfd7ad59d2c;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 21:32:21 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"VF0y6My4O6c5xZxy\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"item": [
+								{
+									"name": "Deletar usuário com ID inexistente",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}usuarios/-1",
+											"host": [
+												"{{baseURL}}usuarios"
+											],
+											"path": [
+												"-1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseURL}}usuarios/-1",
+													"host": [
+														"{{baseURL}}usuarios"
+													],
+													"path": [
+														"-1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "47071385a95b8ed0c68c37da34c272cb"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:30:14 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "46"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Nenhum registro excluído\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Put",
+							"item": [
+								{
+									"name": "Atualizar usuário com ID inexistente",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "Status 201",
+											"originalRequest": {
+												"method": "GET",
+												"header": []
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "d0b982ec65a7c9f94b031093f60ba2be"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:27:21 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"LwxXMskhJ3fwlo9S\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Produtos",
+					"item": [
+						{
+							"name": "Get",
+							"item": [
+								{
+									"name": "Buscar produto por ID inválido",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}produtos/SjEVhc3RolagUFnp",
+											"host": [
+												"{{baseURL}}produtos"
+											],
+											"path": [
+												"SjEVhc3RolagUFnp"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}produtos/SjEVhc3RolagUFnp",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"SjEVhc3RolagUFnp"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "3a529ef8bf7fff68ed0cf085412b60e0"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:29:25 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "44"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Produto não encontrado\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Buscar produtos",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"item": [
+								{
+									"name": "Excluir produto sem token",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzExNDgyLCJleHAiOjE3NDY3MTIwODJ9.Q9DGbbZVAuauGcliLqtO-b5uBAEE6MxKotwyhvPufBc",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}produtos/K6leHdftCeOJj8bJ",
+											"host": [
+												"{{baseURL}}produtos"
+											],
+											"path": [
+												"K6leHdftCeOJj8bJ"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 401",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzExNDgyLCJleHAiOjE3NDY3MTIwODJ9.Q9DGbbZVAuauGcliLqtO-b5uBAEE6MxKotwyhvPufBc",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}produtos/K6leHdftCeOJj8bJ",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"K6leHdftCeOJj8bJ"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "44bd52cefad8c78097e23b0bec95bf6c;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:42:37 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "103"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Token de acesso ausente, inválido, expirado ou usuário do token não existe mais\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Excluir produto do carrinho",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEyMTcxLCJleHAiOjE3NDY3MTI3NzF9.dmmQxmvILbt5romo11bX59qOWSb7_hiDQSj6PnBBBRc",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}produtos/K6leHdftCeOJj8BJ",
+											"host": [
+												"{{baseURL}}produtos"
+											],
+											"path": [
+												"K6leHdftCeOJj8BJ"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEyMTcxLCJleHAiOjE3NDY3MTI3NzF9.dmmQxmvILbt5romo11bX59qOWSb7_hiDQSj6PnBBBRc",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}produtos/K6leHdftCeOJj8BJ",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"K6leHdftCeOJj8BJ"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "458fc0a42355b94a1a38e483a8400b8e;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:49:58 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "135"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Não é permitido excluir produto que faz parte de carrinho\",\n    \"idCarrinhos\": [\n        \"qbMqntef4iTOwWfg\"\n    ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Put",
+							"item": [
+								{
+									"name": "Atualizar produto com nome existente",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEyMTcxLCJleHAiOjE3NDY3MTI3NzF9.dmmQxmvILbt5romo11bX59qOWSb7_hiDQSj6PnBBBRc",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Logitech MX Vertical\",\r\n  \"preco\": 400,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}produtos/K6leHdftCeOJj8BJ",
+											"host": [
+												"{{baseURL}}produtos"
+											],
+											"path": [
+												"K6leHdftCeOJj8BJ"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEyMTcxLCJleHAiOjE3NDY3MTI3NzF9.dmmQxmvILbt5romo11bX59qOWSb7_hiDQSj6PnBBBRc",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Logitech MX Vertical\",\r\n  \"preco\": 400,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos/K6leHdftCeOJj8BJ",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"K6leHdftCeOJj8BJ"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "1584774a01d3187aea036fdc8bdcdf37;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:53:16 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "53"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Já existe produto com esse nome\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Atualizar produto com ID inexistente",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIxOTk5LCJleHAiOjE3NDY3MjI1OTl9.h1oMTKgN2O6w260MjgnsbT8QOS_7XstrD48kB0P5zVA",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"00000j\",\r\n  \"preco\": 400,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}produtos/1555555555555555",
+											"host": [
+												"{{baseURL}}produtos"
+											],
+											"path": [
+												"1555555555555555"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 201",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIxOTk5LCJleHAiOjE3NDY3MjI1OTl9.h1oMTKgN2O6w260MjgnsbT8QOS_7XstrD48kB0P5zVA",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"00000j\",\r\n  \"preco\": 400,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos/1555555555555555",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"1555555555555555"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "f2609c6c7cac1a3c49e760fef1feb11a;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:39:25 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"YgPSGz20bMaX83Wy\"\n}"
+										},
+										{
+											"name": "Teste do Token",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIxOTk5LCJleHAiOjE3NDY3MjI1OTl9.h1oMTKgN2O6w260MjgnsbT8QOS_7XstrD48kB0P5zVA",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"00000j\",\r\n  \"preco\": 400,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos/1555555555555555",
+													"host": [
+														"{{baseURL}}produtos"
+													],
+													"path": [
+														"1555555555555555"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "d594db0d9e4243e089eae3d5c0997b51;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 16:43:58 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "103"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Token de acesso ausente, inválido, expirado ou usuário do token não existe mais\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Post",
+							"item": [
+								{
+									"name": "Cadastrar produto",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Logtech MX Vertical V2\",\r\n  \"preco\": \"470\",\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": \"38\"\r\n}\r\n\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}produtos",
+											"host": [
+												"{{baseURL}}produtos"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 201",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Logitech MX Vertical V2\",\r\n  \"preco\": \"470\",\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": \"381\"\r\n}\r\n\r\n\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos",
+													"host": [
+														"{{baseURL}}produtos"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "7dba5657c687cf63cdeda95088e08a81;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:17:56 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "82"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"SjEVhc3RolagUFnq\"\n}"
+										},
+										{
+											"name": "Status 401 - sem token",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Logtech MX Vertical V2\",\r\n  \"preco\": \"470\",\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": \"38\"\r\n}\r\n\r\n\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos",
+													"host": [
+														"{{baseURL}}produtos"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "64d66691b03467414cc7593f8bfc73af;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:36:33 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "103"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Token de acesso ausente, inválido, expirado ou usuário do token não existe mais\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Cadastrar produto com nome já existente",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nome\": \"Logitech MX Vertical V2\",\r\n  \"preco\": \"400.00\",\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": \"31\"\r\n}\r\n\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}produtos",
+											"host": [
+												"{{baseURL}}produtos"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzEwMTQyLCJleHAiOjE3NDY3MTA3NDJ9.FJ8BqHmeiUDmHAn2a9Nyq9Dxzpq4AVyFMPO4KQZwlG4",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"nome\": \"Logitech MX Vertical V2\",\r\n  \"preco\": \"400.00\",\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": \"31\"\r\n}\r\n\r\n\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}produtos",
+													"host": [
+														"{{baseURL}}produtos"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "440b1594780118e0006948d73b83c114;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 13:20:46 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "53"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Já existe produto com esse nome\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Carrinhos",
+					"item": [
+						{
+							"name": "Get",
+							"item": [
+								{
+									"name": "Buscar carrinho com ID inválido",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIyODEyLCJleHAiOjE3NDY3MjM0MTJ9.5CxeSAn57gPe2kQob9ysf6bzBx0CAg4zpgeAKdAhGT8",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}carrinhos/qbMqntef4iTOwWfg",
+											"host": [
+												"{{baseURL}}carrinhos"
+											],
+											"path": [
+												"qbMqntef4iTOwWfg"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzIyODEyLCJleHAiOjE3NDY3MjM0MTJ9.5CxeSAn57gPe2kQob9ysf6bzBx0CAg4zpgeAKdAhGT8",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}carrinhos/qbMqntef4iTOwWfg",
+													"host": [
+														"{{baseURL}}carrinhos"
+													],
+													"path": [
+														"qbMqntef4iTOwWfg"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "946c93296c8bd006f384da39f51c9675;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 18:05:26 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "45"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Carrinho não encontrado\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"item": [
+								{
+									"name": "Cancelar compras do carrinho",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzI4Mjk4LCJleHAiOjE3NDY3Mjg4OTh9.C6LBL68hLlFkcOQoyBCqn92ONE2niw7qmwF-SFHrS0I",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}carrinhos/cancelar-compra",
+											"host": [
+												"{{baseURL}}carrinhos"
+											],
+											"path": [
+												"cancelar-compra"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 200",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzI4Mjk4LCJleHAiOjE3NDY3Mjg4OTh9.C6LBL68hLlFkcOQoyBCqn92ONE2niw7qmwF-SFHrS0I",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{baseURL}}carrinhos/cancelar-compra",
+													"host": [
+														"{{baseURL}}carrinhos"
+													],
+													"path": [
+														"cancelar-compra"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "6867041d9851419fc4c4092e1f4f91d5;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 18:22:44 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "86"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Registro excluído com sucesso. Estoque dos produtos reabastecido\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Post",
+							"item": [
+								{
+									"name": "Cadastro de 2 carrinhos por usuário",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzI3MDQxLCJleHAiOjE3NDY3Mjc2NDF9.vts07GWM-g6uuLFg9niRAN0Vxw63wzx1KIdXRJ1aFa8",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"7pMiiBd0M1N3kPtY\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}carrinhos",
+											"host": [
+												"{{baseURL}}carrinhos"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Status 400",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQ2NzI3MDQxLCJleHAiOjE3NDY3Mjc2NDF9.vts07GWM-g6uuLFg9niRAN0Vxw63wzx1KIdXRJ1aFa8",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"7pMiiBd0M1N3kPtY\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseURL}}carrinhos",
+													"host": [
+														"{{baseURL}}carrinhos"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "access-control-allow-origin",
+													"value": "*"
+												},
+												{
+													"key": "x-dns-prefetch-control",
+													"value": "off"
+												},
+												{
+													"key": "x-frame-options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "strict-transport-security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "x-download-options",
+													"value": "noopen"
+												},
+												{
+													"key": "x-content-type-options",
+													"value": "nosniff"
+												},
+												{
+													"key": "x-xss-protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "x-cloud-trace-context",
+													"value": "1995282bcb5000da047ab994732bc849;o=1"
+												},
+												{
+													"key": "date",
+													"value": "Thu, 08 May 2025 18:03:22 GMT"
+												},
+												{
+													"key": "server",
+													"value": "Google Frontend"
+												},
+												{
+													"key": "Content-Length",
+													"value": "61"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Não é permitido ter mais de 1 carrinho\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"description": "Realização de teste com foco na qualidade da aplicação e nas regras de negócio da API Rest."
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://compassuol.serverest.dev/",
+			"type": "default"
+		}
+	]
+}
