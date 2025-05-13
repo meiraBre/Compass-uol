@@ -1,4 +1,4 @@
-# 📅 Roadmap de Sprints - Formação QA Compass UOL
+# 📅 Roadmap de Sprints - Estágio QA Compass UOL
 ![Logos](Logos/Logo_Compass.png)
 ### Data de inicio: 17.03.2025
 
