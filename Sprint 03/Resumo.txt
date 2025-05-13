@@ -1,0 +1,10 @@
+Semana 05 - Aprofundando em Análise de Testes e Reports de Issues
+- Pirâmide de Testes e Issues
+- Ciclo de vida de Testes de Software
+- Testes Baseados em Riscos
+- Mapas mentais para análise de testes
+
+Semana 06 - Aprofundando em Testes Front-end
+- Aprofundando em Testes Web + Exploratórios
+- Testes Exploratórios
+- Gerenciamento Atividades Teste + Ferramentas de Teste

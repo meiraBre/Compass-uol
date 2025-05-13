@@ -1,0 +1,7 @@
+Semana 07 - Introdução a APIs REST
+- Introdução a APIs e documentação
+- Postman
+
+Semana 08 - Challenge 01
+- Preparação Challenge
+- Cobertura de testes

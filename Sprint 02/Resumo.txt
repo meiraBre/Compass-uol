@@ -1,0 +1,8 @@
+Semana 03 - Introdução a área QA + AI Core
+- Teste de Software e Garantia da Qualidade (QA)
+- AI e GenAI com AWS
+- AI generativa usando Amazon BedRock
+- Plano de testes
+
+Semana 04 - Fundamentos QA CTFL
+- Curso Preparatório CTFL 4.0

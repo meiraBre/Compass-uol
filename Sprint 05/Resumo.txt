@@ -1,0 +1,2 @@
+Semana 09 - Base versionamento e programação Python
+- Git e GitHub
