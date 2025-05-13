@@ -1,7 +1,7 @@
 ![Logo](Logo/Logo_Compass.png)
 
 # 📅 Roadmap de Sprints - Formação QA Compass UOL
-
+![Logo](Logo/logo-uol-icon-1024.png)
 ## 🚀 Sprint 01
 - **Semana 1**: Onboarding e Metodologias Ágeis  
 - **Semana 2**: Análise de Requisitos & Introdução ao QA
