@@ -1,6 +1,9 @@
-![Logo](Logo/Logo_Compass.png)
+# 📅 Roadmap de Sprints - Estágio QA Compass UOL
+![Logos](Logos/Logo_Compass.png)
+### Data de inicio: 17.03.2025
 
-# 📅 Roadmap de Sprints - Formação QA Compass UOL
+- Primeira formação de Squads: Bit Masters
+- Segunda formação de Squads: QA-ntastic Five
 
 ## 🚀 Sprint 01
 - **Semana 1**: Onboarding e Metodologias Ágeis  
