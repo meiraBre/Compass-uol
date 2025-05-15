@@ -10,7 +10,7 @@ def dividir_numeros (num1, num2):
 def multiplicar_numeros (num1, num2):
     return num1 * num2
 
-def multiplicar_numeros (num1, num2):
+def elevar_numeros (num1, num2):
     return num1 ** num2
 
 def extrair_raiz_quadrada (num1):

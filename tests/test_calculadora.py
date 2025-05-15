@@ -21,7 +21,7 @@ def test_elevar_numeros_com_input ():
     assert actual_result == 8
     
 def test_extrair_raiz_quadrada_numeros_com_input ():
-    actual_result = calc.extrair_raiz_quadrada (num1 = 81)
-    assert actual_result == 9 
+    actual_result = calc.extrair_raiz_quadrada (num1 = 4)
+    assert actual_result == 2
 
 #Utilização de IA para resolver o problema de importar as funções que estão em outro arquivo e em outra pasta. Solução: Importar a pasta e o arquivo inteiro e dar um nome "calc" e depois utilizar nas operações.
