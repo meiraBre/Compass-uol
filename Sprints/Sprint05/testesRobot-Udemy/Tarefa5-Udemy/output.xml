@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T17:07:16.447356" rpa="false" schemaversion="5">
+<suite id="s1" name="Test4" source="C:\Users\breme\testesRobot\test4.robot">
+<test id="s1-t1" name="Criar E Imprimir Email Customizado" line="12">
+<kw name="Gerar Email Customizado">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-05-20T17:07:16.483079" level="INFO">${palavra} = jAVxqrGH</msg>
+<var>${palavra}</var>
+<arg>8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-05-20T17:07:16.482872" elapsed="0.000239"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-20T17:07:16.483389" level="INFO">${email} = AnaSilvajAVxqrGH@testerobot.com</msg>
+<var>${email}</var>
+<arg>SEPARATOR=</arg>
+<arg>${nome}${sobrenome}${palavra}@testerobot.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-20T17:07:16.483221" elapsed="0.000187"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2025-05-20T17:07:16.483452" elapsed="0.000037"/>
+</return>
+<msg time="2025-05-20T17:07:16.483572" level="INFO">${email_pronto} = AnaSilvajAVxqrGH@testerobot.com</msg>
+<var>${email_pronto}</var>
+<arg>Ana</arg>
+<arg>Silva</arg>
+<status status="PASS" start="2025-05-20T17:07:16.482449" elapsed="0.001138"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${email_pronto}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T17:07:16.483844" elapsed="0.000390"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:07:16.481829" elapsed="0.002616"/>
+</test>
+<status status="PASS" start="2025-05-20T17:07:16.448730" elapsed="0.036514"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test4" id="s1" pass="1" fail="0" skip="0">Test4</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-20T17:07:16.442231" level="WARN">Error in file 'C:\Users\breme\testesRobot\test4.robot' on line 9: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
