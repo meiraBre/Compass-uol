@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T16:39:17.390160" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Users\breme\testesRobot\test.robot">
+<test id="s1-t1" name="Imprimir Meses Do Ano" line="5">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.436473" elapsed="0.000790"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[1]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.437679" elapsed="0.000660"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[2]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.438697" elapsed="0.000737"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[3]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.439735" elapsed="0.012312"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[4]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.455455" elapsed="0.000880"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[5]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.456714" elapsed="0.001357"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[6]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.458480" elapsed="0.000704"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[7]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.459598" elapsed="0.000628"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[8]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.460597" elapsed="0.000593"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[9]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.461590" elapsed="0.000626"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[10]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.462485" elapsed="0.000556"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MESES[11]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T16:39:17.463987" elapsed="0.000811"/>
+</kw>
+<status status="PASS" start="2025-05-20T16:39:17.435604" elapsed="0.029547"/>
+</test>
+<status status="PASS" start="2025-05-20T16:39:17.392731" elapsed="0.073286"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
