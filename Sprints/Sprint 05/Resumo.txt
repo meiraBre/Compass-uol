@@ -1,2 +1,7 @@
 Semana 09 - Base versionamento e programação Python
 - Git e GitHub
+- Python, pytest e TDD
+
+Semana 10 - Base Testes Automatizados + Testes automatizados de APIs REST com Robot Framework
+- Base Testes Automatizados
+- Automação de Testes de APIs REST com Robot Framework
