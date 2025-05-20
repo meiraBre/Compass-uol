@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T18:15:37.818552" rpa="false" schemaversion="5">
+<suite id="s1" name="Test5" source="C:\Users\breme\testesRobot\test5.robot">
+<test id="s1-t1" name="Executar Verificacao Da Lista" line="5">
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.850829" elapsed="0.000747"/>
+</kw>
+<arg>'${numero}' == '5'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 5!</arg>
+<arg>ELSE IF</arg>
+<arg>'${numero}' == '10'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 10!</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.850520" elapsed="0.001149"/>
+</kw>
+<var name="${numero}">2</var>
+<status status="PASS" start="2025-05-20T18:15:37.850164" elapsed="0.001554"/>
+</iter>
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Eu sou o número 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.852122" elapsed="0.000214"/>
+</kw>
+<arg>'${numero}' == '5'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 5!</arg>
+<arg>ELSE IF</arg>
+<arg>'${numero}' == '10'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 10!</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.851912" elapsed="0.000471"/>
+</kw>
+<var name="${numero}">5</var>
+<status status="PASS" start="2025-05-20T18:15:37.851820" elapsed="0.000597"/>
+</iter>
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.852767" elapsed="0.000222"/>
+</kw>
+<arg>'${numero}' == '5'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 5!</arg>
+<arg>ELSE IF</arg>
+<arg>'${numero}' == '10'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 10!</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.852567" elapsed="0.000476"/>
+</kw>
+<var name="${numero}">7</var>
+<status status="PASS" start="2025-05-20T18:15:37.852508" elapsed="0.000600"/>
+</iter>
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Eu sou o número 10!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.853420" elapsed="0.000274"/>
+</kw>
+<arg>'${numero}' == '5'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 5!</arg>
+<arg>ELSE IF</arg>
+<arg>'${numero}' == '10'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 10!</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.853235" elapsed="0.000511"/>
+</kw>
+<var name="${numero}">10</var>
+<status status="PASS" start="2025-05-20T18:15:37.853180" elapsed="0.000632"/>
+</iter>
+<iter>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.854139" elapsed="0.000244"/>
+</kw>
+<arg>'${numero}' == '5'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 5!</arg>
+<arg>ELSE IF</arg>
+<arg>'${numero}' == '10'</arg>
+<arg>Log To Console</arg>
+<arg>Eu sou o número 10!</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Eu não sou o número 5 e nem o 10!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T18:15:37.853942" elapsed="0.000507"/>
+</kw>
+<var name="${numero}">12</var>
+<status status="PASS" start="2025-05-20T18:15:37.853883" elapsed="0.000602"/>
+</iter>
+<var>${numero}</var>
+<value>@{NUMEROS}</value>
+<status status="PASS" start="2025-05-20T18:15:37.849780" elapsed="0.004726"/>
+</for>
+<status status="PASS" start="2025-05-20T18:15:37.849499" elapsed="0.005351"/>
+</test>
+<status status="PASS" start="2025-05-20T18:15:37.820042" elapsed="0.035442"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test5" id="s1" pass="1" fail="0" skip="0">Test5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
