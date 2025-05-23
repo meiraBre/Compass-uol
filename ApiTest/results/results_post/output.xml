@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-22T20:49:30.840629" rpa="false" schemaversion="5">
+<suite id="s1" name="Post" source="C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\ApiTest\tests\post.robot">
+<test id="s1-t1" name="Cenário 01: Autenticar um usuário para ele poder atualizar e deletar reservas" line="6">
+<kw name="Criar um usuário" owner="post_resourse">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-05-22T20:49:31.172338" level="INFO">${usuario} = DRTP</msg>
+<var>${usuario}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.172109" elapsed="0.000259"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.172603" level="INFO">${USUARIO} = DRTP</msg>
+<arg>${USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.172467" elapsed="0.000166"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.172780" level="INFO">Meu novo usuário: DRTP</msg>
+<arg>Meu novo usuário: ${USUARIO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.172699" elapsed="0.000108"/>
+</kw>
+<status status="PASS" start="2025-05-22T20:49:31.171714" elapsed="0.001134"/>
+</kw>
+<kw name="Criar o login do usuário" owner="post_resourse">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.173356" level="INFO">${BODY} = {'username': 'DRTP', 'password': 'password123'}</msg>
+<var>${BODY}</var>
+<arg>username=${USUARIO}</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.173165" elapsed="0.000209"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.173521" level="INFO">{'username': 'DRTP', 'password': 'password123'}</msg>
+<arg>${BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.173444" elapsed="0.000101"/>
+</kw>
+<kw name="Criar uma seção no Booker" owner="post_resourse">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.173832" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<var>${HEADERS}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.173745" elapsed="0.000109"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-22T20:49:31.174023" level="INFO">Creating Session using : alias=Booker, url=https://restful-booker.herokuapp.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Booker</arg>
+<arg>url=https://restful-booker.herokuapp.com</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-22T20:49:31.173911" elapsed="0.000246"/>
+</kw>
+<status status="PASS" start="2025-05-22T20:49:31.173616" elapsed="0.000584"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-22T20:49:31.939595" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '47'} 
+ body=b'{"username": "DRTP", "password": "password123"}' 
+ </msg>
+<msg time="2025-05-22T20:49:31.939779" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 22 May 2025 23:49:31 GMT', 'Etag': 'W/"1c-J3EiwfZwVQjKTKvpvazUfTni8fI"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=NnkA4bxKkaFWr%2FU4hGu3lqC%2BJxXk1%2FPkaJ4a%2BTG4MPc%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1747957771"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=NnkA4bxKkaFWr%2FU4hGu3lqC%2BJxXk1%2FPkaJ4a%2BTG4MPc%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1747957771"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"reason":"Bad credentials"} 
+ </msg>
+<msg time="2025-05-22T20:49:31.939885" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-22T20:49:31.941329" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<var>${RESPOSTA}</var>
+<arg>alias=Booker</arg>
+<arg>url=/auth</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.174261" elapsed="0.767128"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.942275" level="INFO">{'reason': 'Bad credentials'}</msg>
+<arg>${RESPOSTA.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.941615" elapsed="0.000725"/>
+</kw>
+<status status="PASS" start="2025-05-22T20:49:31.173015" elapsed="0.769409"/>
+</kw>
+<kw name="Criar uma seção no Booker" owner="post_resourse">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-22T20:49:31.943199" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<var>${HEADERS}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-22T20:49:31.943014" elapsed="0.000213"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-22T20:49:31.943523" level="INFO">Creating Session using : alias=Booker, url=https://restful-booker.herokuapp.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Booker</arg>
+<arg>url=https://restful-booker.herokuapp.com</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-22T20:49:31.943327" elapsed="0.000358"/>
+</kw>
+<status status="PASS" start="2025-05-22T20:49:31.942726" elapsed="0.001019"/>
+</kw>
+<status status="PASS" start="2025-05-22T20:49:31.171110" elapsed="0.772830"/>
+</test>
+<status status="PASS" start="2025-05-22T20:49:30.841878" elapsed="1.102980"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Post" id="s1" pass="1" fail="0" skip="0">Post</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
