@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-23T05:44:25.138473" rpa="false" schemaversion="5">
+<suite id="s1" name="Delete Reserva" source="C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\ApiTest\tests\delete_reserva.robot">
+<test id="s1-t1" name="Cenário 01: Deletar uma reserva específica" line="6">
+<kw name="Criar uma seção no Booker" owner="post_resource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-23T05:44:25.550505" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<var>${HEADERS}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-23T05:44:25.550180" elapsed="0.000371"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-23T05:44:25.566205" level="INFO">Creating Session using : alias=Booker, url=https://restful-booker.herokuapp.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Booker</arg>
+<arg>url=${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-23T05:44:25.550721" elapsed="0.016080"/>
+</kw>
+<status status="PASS" start="2025-05-23T05:44:25.549521" elapsed="0.017387"/>
+</kw>
+<kw name="Gerar token de autenticação" owner="post_resource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-23T05:44:25.567694" level="INFO">${BODY} = {'username': 'admin', 'password': 'password123'}</msg>
+<var>${BODY}</var>
+<arg>username=${USERNAME}</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-23T05:44:25.567490" elapsed="0.000225"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-23T05:44:26.412579" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body=b'{"username": "admin", "password": "password123"}' 
+ </msg>
+<msg time="2025-05-23T05:44:26.412728" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Content-Length': '27', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 23 May 2025 08:44:26 GMT', 'Etag': 'W/"1b-1KGzgicmZWSilwd0mhtx1FwWuDc"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=e%2F1OXL%2FcrHuH3R8Tbuprkhwr3%2FSMEn87s9CtC4c8buQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1747989866"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=e%2F1OXL%2FcrHuH3R8Tbuprkhwr3%2FSMEn87s9CtC4c8buQ%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1747989866"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"token":"74fa99c88363ed5"} 
+ </msg>
+<msg time="2025-05-23T05:44:26.412815" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-23T05:44:26.413369" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<var>${RESPOSTA}</var>
+<arg>alias=Booker</arg>
+<arg>url=/auth</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-23T05:44:25.567797" elapsed="0.845611"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.414278" level="INFO">${TOKEN} = 74fa99c88363ed5</msg>
+<var>${TOKEN}</var>
+<arg>${RESPOSTA.json()['token']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.413616" elapsed="0.000696"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.414629" level="INFO">Token gerado: 74fa99c88363ed5</msg>
+<arg>Token gerado: ${TOKEN}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.414466" elapsed="0.000209"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.415001" level="INFO">${TOKEN} = 74fa99c88363ed5</msg>
+<arg>${TOKEN}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.414803" elapsed="0.000246"/>
+</kw>
+<status status="PASS" start="2025-05-23T05:44:25.567240" elapsed="0.847883"/>
+</kw>
+<kw name="Deletar uma reserva com ID válido" owner="delete_resource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.415986" level="INFO">${HEADERS} = {'Content-Type': 'application/json', 'Cookie': 'token=74fa99c88363ed5'}</msg>
+<var>${HEADERS}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Cookie=token=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.415740" elapsed="0.000278"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-05-23T05:44:26.617178" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/1 
+ path_url=/booking/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Cookie': 'token=74fa99c88363ed5', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-05-23T05:44:26.617289" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/1 
+ status=201, reason=Created 
+ headers={'Content-Length': '7', 'Content-Type': 'text/plain; charset=utf-8', 'Date': 'Fri, 23 May 2025 08:44:26 GMT', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=e%2F1OXL%2FcrHuH3R8Tbuprkhwr3%2FSMEn87s9CtC4c8buQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1747989866"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=e%2F1OXL%2FcrHuH3R8Tbuprkhwr3%2FSMEn87s9CtC4c8buQ%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1747989866"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body=Created 
+ </msg>
+<msg time="2025-05-23T05:44:26.617387" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-23T05:44:26.617817" level="INFO">${RESPOSTA} = &lt;Response [201]&gt;</msg>
+<var>${RESPOSTA}</var>
+<arg>alias=Booker</arg>
+<arg>url=/booking/${ID}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.416130" elapsed="0.201723"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.618575" level="INFO">Status Code: 201</msg>
+<arg>Status Code: ${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.618041" elapsed="0.000587"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.619458" level="INFO">Response Text: Created</msg>
+<arg>Response Text: ${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.618955" elapsed="0.000582"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-05-23T05:44:26.620164" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${RESPOSTA.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-05-23T05:44:26.619664" elapsed="0.000587"/>
+</kw>
+<arg>1</arg>
+<arg>${TOKEN}</arg>
+<status status="PASS" start="2025-05-23T05:44:26.415402" elapsed="0.204926"/>
+</kw>
+<status status="PASS" start="2025-05-23T05:44:25.548757" elapsed="1.071870"/>
+</test>
+<status status="PASS" start="2025-05-23T05:44:25.142001" elapsed="1.479507"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Delete Reserva" id="s1" pass="1" fail="0" skip="0">Delete Reserva</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
