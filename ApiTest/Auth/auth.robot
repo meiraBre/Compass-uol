@@ -7,6 +7,11 @@ ${USERNAME}    admin
 ${PASSWORD}    password123
 ${BASE_URL}    https://restful-booker.herokuapp.com
 
+*** Test Cases ***
+Cenário 01: Fazer login de um usuário para ele poder atualizar e deletar reservas 
+    Criar uma seção no Booker
+    Gerar token de autenticação
+    
 *** Keywords ***
 Criar uma seção no Booker
     ${HEADERS}    Create Dictionary    Content-Type=application/json
@@ -27,14 +32,5 @@ Gerar token de autenticação
     Set global Variable    ${TOKEN}
     Set Global Variable    ${RESPOSTA}
 
-Validar o login
-    Should Be Equal    ${RESPOSTA.json(["message"])}    200 OK
 
 
-
-
-
-
-
-
-    

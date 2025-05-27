@@ -3,7 +3,7 @@ Resource    ../resources/post_resource.robot
 Resource    ../resources/post_reserva_resource.robot
 
 *** Test Cases ***
-Cenário 01: Criar uma reserva com sucesso
+Cenário 02: Criar uma reserva com sucesso como usuário autenticado
     Criar uma seção no Booker
     Criar uma nova reserva
     ...    Jim
