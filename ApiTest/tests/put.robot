@@ -3,7 +3,7 @@ Resource    ../resources/post_resource.robot
 Resource    ../resources/put_resources.robot
 
 *** Test Cases ***
-Cenário 02: Atualizar uma reserva específica
+Cenário 04: Atualizar uma reserva específica
     Criar uma seção no Booker
     Gerar token de autenticação
 

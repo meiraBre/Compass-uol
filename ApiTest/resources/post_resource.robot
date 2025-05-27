@@ -24,7 +24,12 @@ Gerar token de autenticação
 
     ${TOKEN}    Set Variable    ${RESPOSTA.json()['token']}
     Log    Token gerado: ${TOKEN}
-    Set Suite Variable    ${TOKEN}
+    Set global Variable    ${TOKEN}
+    Set Global Variable    ${RESPOSTA}
+
+Validar o login
+    Should Be Equal    ${RESPOSTA.json(["message"])}    200 OK
+
 
 
 
