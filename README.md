@@ -25,4 +25,8 @@
 - **Semana 9**: Fundamentos de Versionamento com Git e Programação em Python  
 - **Semana 10**: Testes Automatizados + Testes de APIs REST com Robot Framework
 
+  ## 🚀 Sprint 06
+- **Semana 11**: Testes automatizados de APIs REST com Robot Framework - Aprofundando com AI e AWS
+- **Semana 12**: 
+
 
