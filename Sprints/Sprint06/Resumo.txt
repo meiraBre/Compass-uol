@@ -1,0 +1,7 @@
+Semana 11 - Testes automatizados de APIs REST com Robot Framework - Aprofundando com AI e AWS
+- Finalizando Robot + APIs && Power-up com AmazonQ
+- Virtualização + AWS EC2
+- Pré-Challenge
+
+Semana 12 - Challenge 03
+- Semana com foco no challenge
