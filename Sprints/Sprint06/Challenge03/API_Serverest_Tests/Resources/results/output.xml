@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-03T18:34:59.879695" rpa="false" schemaversion="5">
+<suite id="s1" name="Fluxo01" source="C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Resources\fluxo01.robot">
+<test id="s1-t1" name="Cenário 01: Criar um usuário válido" line="15">
+<kw name="Criar uma sessão no Serverest">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-03T18:35:00.573178" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-03T18:35:00.572934" elapsed="0.000429"/>
+</kw>
+<status status="PASS" start="2025-06-03T18:35:00.572447" elapsed="0.000999"/>
+</kw>
+<kw name="Cadastrar um usuário com as informações necessárias">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-03T18:35:00.574173" level="INFO">${BODY} = {'nome': 'Fulano da Silva', 'email': 'juliana@qa.com', 'password': 'teste123', 'administrador': 'true'}</msg>
+<var>${BODY}</var>
+<arg>nome=${NOME}</arg>
+<arg>email=${EMAIL}</arg>
+<arg>password=${PASSWORD}</arg>
+<arg>administrador=${ADMINISTRADOR}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-03T18:35:00.573905" elapsed="0.000291"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-03T18:35:01.122414" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '103'} 
+ body=b'{"nome": "Fulano da Silva", "email": "juliana@qa.com", "password": "teste123", "administrador": "true"}' 
+ </msg>
+<msg time="2025-06-03T18:35:01.122535" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'bcfb3d45fa84a66f2465a899f4034f4b;o=1', 'date': 'Tue, 03 Jun 2025 21:35:00 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "39iUI91zF8jbYbIT"
+} 
+ </msg>
+<msg time="2025-06-03T18:35:01.122598" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-03T18:35:01.128302" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>Serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-03T18:35:00.574285" elapsed="0.554073"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-03T18:35:01.128758" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<arg>${RESPONSE}</arg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-03T18:35:01.128540" elapsed="0.000260"/>
+</kw>
+<status status="PASS" start="2025-06-03T18:35:00.573700" elapsed="0.555176"/>
+</kw>
+<kw name="Validar a resposta com Status 201">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-03T18:35:01.131225" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${RESPONSE.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-03T18:35:01.130607" elapsed="0.000705"/>
+</kw>
+<status status="PASS" start="2025-06-03T18:35:01.130315" elapsed="0.001110"/>
+</kw>
+<kw name="Armazenar o ID do novo usuário">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-03T18:35:01.132617" level="INFO">${ID} = 39iUI91zF8jbYbIT</msg>
+<var>${ID}</var>
+<arg>${RESPONSE.json()}</arg>
+<arg>_id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-03T18:35:01.132066" elapsed="0.000575"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-03T18:35:01.133165" level="INFO">${ID_USUARIO} = 39iUI91zF8jbYbIT</msg>
+<arg>${ID_USUARIO}</arg>
+<arg>${ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-03T18:35:01.132725" elapsed="0.000472"/>
+</kw>
+<status status="PASS" start="2025-06-03T18:35:01.131767" elapsed="0.001473"/>
+</kw>
+<status status="PASS" start="2025-06-03T18:35:00.571756" elapsed="0.561673"/>
+</test>
+<status status="PASS" start="2025-06-03T18:34:59.882601" elapsed="1.251366"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fluxo01" id="s1" pass="1" fail="0" skip="0">Fluxo01</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-03T18:34:59.868039" level="ERROR">Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Resources\fluxo01.robot' on line 2: Non-existing setting 'Resouce'. Did you mean:
+    Resource</msg>
+</errors>
+</robot>
