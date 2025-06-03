@@ -19,3 +19,13 @@
 [**Acessar a Collection Postman**](https://bit-masters.postman.co/workspace/Testes-ServeRest~46dc673d-a031-42a0-a013-3404b88c2324/folder/44579864-e53ba0b9-32c6-49d5-8144-5470bb9d6aab?action=share&creator=44579864&ctx=documentation)
 
 ---
+
+## 📅 Dia 02  
+
+### ✅ Atividades Realizadas
+- Finalização do relatório dos resultados dos testes manuais no QAlity
+[Link do QAlity](https://bremeirah.atlassian.net/plugins/servlet/ac/com.soldevelo.apps.test_management_premium/test-cycle-details?testCycleId=128004#!testCycleId=128004)
+- Refinamento dos testes candidatos a automação
+- Criação de fluxos de testes automatizados para o Robot
+- Inicio dos testes automatizados com Robot Framework
+
