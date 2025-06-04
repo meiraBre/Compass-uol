@@ -11,7 +11,6 @@
 - Reporte de **bugs** encontrados no sistema, registrados na ferramenta **Jira**.
 - Armazenamento das **responses** no Postman como evidências para cada cenário.
 - Inicio da documentação dos resultados dos testes no QAlity Plus no Jira
-![alt text](image.png)
 
 ---
 
@@ -27,5 +26,14 @@
 [Link do QAlity](https://bremeirah.atlassian.net/plugins/servlet/ac/com.soldevelo.apps.test_management_premium/test-cycle-details?testCycleId=128004#!testCycleId=128004)
 - Refinamento dos testes candidatos a automação
 - Criação de fluxos de testes automatizados para o Robot
-- Inicio dos testes automatizados com Robot Framework
+- Inicio dos testes automatizados com Robot Framework (Organização das pastas e arquivos iniciais)
+
+## 📅 Dia 03  
+
+### ✅ Atividades Realizadas
+- Realização dos fluxos de testes candidatos a automação com Robot
+1. Fluxo Essencial de Cadastro e Validação de Usuário
+2. Fluxo Essencial de Login e Validação de Sessão
+3. Fluxo Essencial de Cadastro e Manipulação de Produto
+- Melhoria de algumas questões do Planejamento de Testes (Descrição dos testes que seriam automatizados)
 
