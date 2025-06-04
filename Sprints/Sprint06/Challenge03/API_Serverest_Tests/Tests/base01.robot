@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Resources/fluxo01.robot
 Resource    ../Resources/fluxo02.robot
+Resource    ../Resources/fluxo03.robot
 
 *** Variables ***
 ${URL_Serverest}    https://compassuol.serverest.dev
@@ -46,4 +47,25 @@ Cenário 07: Login com senha incorreta
     Criar uma sessão no Serverest 07
     Tentar fazer login com uma senha qualquer
     Validar resposta 08
+
+# 3. Fluxo Essencial de Cadastro e Manipulação de Produto
+Cenário 08: Cadastrar produto com nome único
+    Criar uma sessão no Serverest 08, com o token
+    Cadastrar as informações do novo produto
+    Validar resposta 09
+
+Cenário 09: Cadastrar produto com nome já usado
+    Criar uma sessão no Serverest 09
+    Colocar as informações do mesmo produto cadastrado anteriormente
+    Validar a resposta 10
+
+Cenário 10: Atualizar produto com nome já existente
+    Criar uma sessão no Serverest 10
+    Tentar atualizar um produto com o nome do produto criado no C08
+    Validar resposta 11
+
+Cenário 11: Tentar realizar ação em produto sem autenticação
+    Criar uma sessão no Serverest 11
+    Tentar cadastrar um produto sem autenticação
+    Validar resposta 12
 

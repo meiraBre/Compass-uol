@@ -8,6 +8,7 @@ ${URL_Serverest}    https://compassuol.serverest.dev
 &{HEADERS}          Content-Type=application/json
 ${EMAIL}            mirianii@qa.com
 ${PASSWORD}         teste123
+${Nome_Produto}     Mouse
 
 *** Keywords ***
 # Avalia fluxo de realização de login com dados corretos
@@ -24,6 +25,7 @@ Validar resposta 06
 Armazenar o token em uma variável global
     ${TOKEN}=    Get From Dictionary    ${LOGIN.json()}    authorization
     Set Global Variable    ${TOKEN}
+    Log To Console    ${TOKEN}
 
 #Avalia como o sistema lida com a ação de realizar um Login com email inexistente
 Criar uma sessão no Serverest 06
@@ -48,3 +50,6 @@ Tentar fazer login com uma senha qualquer
     Set Test Variable    ${LOGIN}
 Validar resposta 08
     Should Be Equal As Integers    ${LOGIN.status_code}    400
+
+
+
