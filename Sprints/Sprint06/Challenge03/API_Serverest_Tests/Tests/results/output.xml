@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-04T17:31:16.891486" rpa="false" schemaversion="5">
+<suite id="s1" name="Base01" source="C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Tests\base01.robot">
+<test id="s1-t1" name="Cenário 01: Criar um usuário válido" line="10">
+<kw name="Criar uma sessão no Serverest 01" owner="fluxo01">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:17.269974" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:17.269741" elapsed="0.000402"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:17.269109" elapsed="0.001109"/>
+</kw>
+<kw name="Cadastrar um usuário com as informações necessárias" owner="fluxo01">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:17.270971" level="INFO">${BODY} = {'nome': 'Fulano da Silva', 'email': 'mirianii@qa.com', 'password': 'teste123', 'administrador': 'true'}</msg>
+<var>${BODY}</var>
+<arg>nome=${NOME}</arg>
+<arg>email=${EMAIL}</arg>
+<arg>password=${PASSWORD}</arg>
+<arg>administrador=${ADMINISTRADOR}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:17.270721" elapsed="0.000272"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:17.706121" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '104'} 
+ body=b'{"nome": "Fulano da Silva", "email": "mirianii@qa.com", "password": "teste123", "administrador": "true"}' 
+ </msg>
+<msg time="2025-06-04T17:31:17.706293" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '5c85115a464f7b37089f3d6f84fb1d73;o=1', 'date': 'Wed, 04 Jun 2025 20:31:17 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
+ body={
+    "message": "Este email já está sendo usado"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:17.706417" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:17.707660" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</msg>
+<var>${RESPONSE}</var>
+<arg>Serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-06-04T17:31:17.271070" elapsed="0.439772">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${RESPONSE}</arg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2025-06-04T17:31:17.711122" elapsed="0.000041"/>
+</kw>
+<status status="FAIL" start="2025-06-04T17:31:17.270526" elapsed="0.440820">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</kw>
+<kw name="Validar a resposta 01" owner="fluxo01">
+<status status="NOT RUN" start="2025-06-04T17:31:17.711768" elapsed="0.000039"/>
+</kw>
+<kw name="Armazenar o ID do novo usuário" owner="fluxo01">
+<status status="NOT RUN" start="2025-06-04T17:31:17.712214" elapsed="0.000037"/>
+</kw>
+<status status="FAIL" start="2025-06-04T17:31:17.268495" elapsed="0.444024">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</test>
+<test id="s1-t2" name="Cenário 02: Tentar criar um usuário com os dados do usuário do C01" line="16">
+<kw name="Criar uma sessão no Serverest 02" owner="fluxo01">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:17.715076" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:17.714767" elapsed="0.000687"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:17.714131" elapsed="0.001414"/>
+</kw>
+<kw name="Cadastrar um usuário com as mesmas informações do usuário anterior" owner="fluxo01">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:17.717966" level="INFO">${BODY} = {'nome': 'Fulano da Silva', 'email': 'mirianii@qa.com', 'password': 'teste123', 'administrador': 'true'}</msg>
+<var>${BODY}</var>
+<arg>nome=${NOME}</arg>
+<arg>email=${EMAIL}</arg>
+<arg>password=${PASSWORD}</arg>
+<arg>administrador=${ADMINISTRADOR}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:17.717572" elapsed="0.000426"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.117475" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '104'} 
+ body=b'{"nome": "Fulano da Silva", "email": "mirianii@qa.com", "password": "teste123", "administrador": "true"}' 
+ </msg>
+<msg time="2025-06-04T17:31:18.117578" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '9d6fc7ae261d4a2817b3c7cd41b68550', 'date': 'Wed, 04 Jun 2025 20:31:18 GMT', 'server': 'Google Frontend', 'Content-Length': '53'} 
+ body={
+    "message": "Este email já está sendo usado"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:18.117652" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:18.117982" level="INFO">${responses} = &lt;Response [400]&gt;</msg>
+<var>${responses}</var>
+<arg>Serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=${BODY}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T17:31:17.718173" elapsed="0.399962"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.119038" level="INFO">${responses} = &lt;Response [400]&gt;</msg>
+<arg>${responses}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.118796" elapsed="0.000286"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:17.716967" elapsed="0.402174"/>
+</kw>
+<kw name="Validar resposta 02" owner="fluxo01">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.120097" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${responses.status_code}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.119690" elapsed="0.000463"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T17:31:18.120620" level="INFO">${mensagem} = Este email já está sendo usado</msg>
+<var>${mensagem}</var>
+<arg>${responses.json()}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.120245" elapsed="0.000397"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${mensagem}</arg>
+<arg>Este email já está sendo usado</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.120728" elapsed="0.000102"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.119479" elapsed="0.001402"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:17.713386" elapsed="0.407761"/>
+</test>
+<test id="s1-t3" name="Cenário 03: Tentar criar um usuário com senha inválida" line="21">
+<kw name="Criar uma sessão no Serverest 03" owner="fluxo01">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.124970" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:18.124505" elapsed="0.000748"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.123314" elapsed="0.002165"/>
+</kw>
+<kw name="Cadastrar um usuário com uma senha de 4 caracteres" owner="fluxo01">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.126151" level="INFO">${BODY} = {'nome': ' Brendaa', 'email': ' meiraa@qa.com.br', 'password': ' 1234', 'administrador': ' true'}</msg>
+<var>${BODY}</var>
+<arg>nome= Brendaa</arg>
+<arg>email= meiraa@qa.com.br</arg>
+<arg>password= 1234</arg>
+<arg>administrador= true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.125999" elapsed="0.000172"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.514425" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '97'} 
+ body=b'{"nome": " Brendaa", "email": " meiraa@qa.com.br", "password": " 1234", "administrador": " true"}' 
+ </msg>
+<msg time="2025-06-04T17:31:18.514573" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '0cf82cca09fe2c27f03599f5110d1acc', 'date': 'Wed, 04 Jun 2025 20:31:18 GMT', 'server': 'Google Frontend', 'Content-Length': '115'} 
+ body={
+    "email": "email deve ser um email válido",
+    "administrador": "administrador deve ser 'true' ou 'false'"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:18.514700" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:18.515999" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</msg>
+<var>${esponse}</var>
+<arg>Serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-06-04T17:31:18.126251" elapsed="0.390928">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2025-06-04T17:31:18.517506" elapsed="0.000043"/>
+</kw>
+<status status="FAIL" start="2025-06-04T17:31:18.125794" elapsed="0.391919">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</kw>
+<kw name="Validar resposta 03" owner="fluxo01">
+<status status="NOT RUN" start="2025-06-04T17:31:18.518054" elapsed="0.000037"/>
+</kw>
+<kw name="Cadastrar um usuário com uma senha de 11 caracteres" owner="fluxo01">
+<status status="NOT RUN" start="2025-06-04T17:31:18.518315" elapsed="0.000031"/>
+</kw>
+<kw name="Validar resposta 04" owner="fluxo01">
+<status status="NOT RUN" start="2025-06-04T17:31:18.518532" elapsed="0.000028"/>
+</kw>
+<status status="FAIL" start="2025-06-04T17:31:18.122291" elapsed="0.396545">HTTPError: 400 Client Error: Bad Request for url: https://compassuol.serverest.dev/usuarios</status>
+</test>
+<test id="s1-t4" name="Cenário 04: Deletar usuário com ID inexistente" line="28">
+<kw name="Criar uma sessão no Serverest 04" owner="fluxo01">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.525627" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:18.525258" elapsed="0.001434"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.524710" elapsed="0.002060"/>
+</kw>
+<kw name="Enviar um ID inexistente de um suposto usuário para Deletar" owner="fluxo01">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.528033" level="INFO">${ID_inexistente} = 000000000000</msg>
+<var>${ID_inexistente}</var>
+<arg>000000000000</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.527919" elapsed="0.000136"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.949711" level="INFO">DELETE Request : url=https://compassuol.serverest.dev/usuarios/000000000000 
+ path_url=/usuarios/000000000000 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T17:31:18.949842" level="INFO">DELETE Response : url=https://compassuol.serverest.dev/usuarios/000000000000 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '60dd06860c70b40081c1cf7acebd66dc', 'date': 'Wed, 04 Jun 2025 20:31:18 GMT', 'server': 'Google Frontend', 'Content-Length': '46'} 
+ body={
+    "message": "Nenhum registro excluído"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:18.950103" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:18.950561" level="INFO">${SEND} = &lt;Response [200]&gt;</msg>
+<var>${SEND}</var>
+<arg>Serverest</arg>
+<arg>/usuarios/${ID_inexistente}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.528129" elapsed="0.422467"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.950962" level="INFO">${SEND} = &lt;Response [200]&gt;</msg>
+<arg>${SEND}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.950763" elapsed="0.000237"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.527677" elapsed="0.423378"/>
+</kw>
+<kw name="Validar resposta 05" owner="fluxo01">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.952405" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${SEND.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.951889" elapsed="0.000571"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.951503" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.523154" elapsed="0.429717"/>
+</test>
+<test id="s1-t5" name="Cenário 05: Login com email e senha corretos, obter o token" line="34">
+<kw name="Criar uma sessão no Serverest 05" owner="fluxo02">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:18.954363" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:18.954122" elapsed="0.000485"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.953908" elapsed="0.000806"/>
+</kw>
+<kw name="Fazer login com os dados do usuário criado no C01" owner="fluxo02">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:18.956123" level="INFO">${BODY} = {'email': 'mirianii@qa.com', 'password': 'teste123'}</msg>
+<var>${BODY}</var>
+<arg>email=${EMAIL}</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.955482" elapsed="0.000666"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:19.366070" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '52'} 
+ body=b'{"email": "mirianii@qa.com", "password": "teste123"}' 
+ </msg>
+<msg time="2025-06-04T17:31:19.366141" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'a74829244b83639e14ee87d3aaeb8b9d', 'date': 'Wed, 04 Jun 2025 20:31:19 GMT', 'server': 'Google Frontend', 'Content-Length': '272'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pcmlhbmlpQHFhLmNvbSIsInBhc3N3b3JkIjoidGVzdGUxMjMiLCJpYXQiOjE3NDkwNjkwNzksImV4cCI6MTc0OTA2OTY3OX0.D7dLAVytJtzmSZ9jtWslNCmopW1_mj6P5UGb8IUGq8k"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:19.366200" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:19.366608" level="INFO">${LOGIN} = &lt;Response [200]&gt;</msg>
+<var>${LOGIN}</var>
+<arg>Serverest</arg>
+<arg>/login</arg>
+<arg>json=${BODY}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T17:31:18.956242" elapsed="0.410403"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.366940" level="INFO">${LOGIN} = &lt;Response [200]&gt;</msg>
+<arg>${LOGIN}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.366797" elapsed="0.000174"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.955298" elapsed="0.411723"/>
+</kw>
+<kw name="Validar resposta 06" owner="fluxo02">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.368045" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${LOGIN.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.367420" elapsed="0.000739"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.367202" elapsed="0.001065"/>
+</kw>
+<kw name="Armazenar o token em uma variável global" owner="fluxo02">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T17:31:19.369625" level="INFO">${TOKEN} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pcmlhbmlpQHFhLmNvbSIsInBhc3N3b3JkIjoidGVzdGUxMjMiLCJpYXQiOjE3NDkwNjkwNzksImV4cCI6MTc0OTA2OTY3OX0.D7dLAVytJtzmSZ9jtWslNCmopW1_mj6P5UGb8IUGq8k</msg>
+<var>${TOKEN}</var>
+<arg>${LOGIN.json()}</arg>
+<arg>authorization</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.368998" elapsed="0.000644"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.369806" level="INFO">${TOKEN} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pcmlhbmlpQHFhLmNvbSIsInBhc3N3b3JkIjoidGVzdGUxMjMiLCJpYXQiOjE3NDkwNjkwNzksImV4cCI6MTc0OTA2OTY3OX0.D7dLAVytJtzmSZ9jtWslNCmopW1_mj6P5UGb8IUGq8k</msg>
+<arg>${TOKEN}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.369712" elapsed="0.000116"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.368691" elapsed="0.001177"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:18.953507" elapsed="0.416540"/>
+</test>
+<test id="s1-t6" name="Cenário 06: Login com email inexistente" line="40">
+<kw name="Criar uma sessão no Serverest 06" owner="fluxo02">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:19.371382" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:19.371209" elapsed="0.000291"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.371019" elapsed="0.000606"/>
+</kw>
+<kw name="Tentar fazer login com um email qualquer" owner="fluxo02">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.372306" level="INFO">${BODY} = {'email': ' bre10@qa.com', 'password': ' 123456'}</msg>
+<var>${BODY}</var>
+<arg>email= bre10@qa.com</arg>
+<arg>password= 123456</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.372014" elapsed="0.000328"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:19.807328" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '49'} 
+ body=b'{"email": " bre10@qa.com", "password": " 123456"}' 
+ </msg>
+<msg time="2025-06-04T17:31:19.807450" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'c4c6dc2ea531e38e7eaed8e371213fbc', 'date': 'Wed, 04 Jun 2025 20:31:19 GMT', 'server': 'Google Frontend', 'Content-Length': '50'} 
+ body={
+    "email": "email deve ser um email válido"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:19.807536" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:19.808046" level="INFO">${LOGIN} = &lt;Response [400]&gt;</msg>
+<var>${LOGIN}</var>
+<arg>Serverest</arg>
+<arg>/login</arg>
+<arg>json=${BODY}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.372494" elapsed="0.435652"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.808546" level="INFO">${LOGIN} = &lt;Response [400]&gt;</msg>
+<arg>${LOGIN}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.808413" elapsed="0.000160"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.371814" elapsed="0.436808"/>
+</kw>
+<kw name="Validar resposta 07" owner="fluxo02">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.809406" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${LOGIN.status_code}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.809085" elapsed="0.000360"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.808912" elapsed="0.000580"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.370613" elapsed="0.439132"/>
+</test>
+<test id="s1-t7" name="Cenário 07: Login com senha incorreta" line="45">
+<kw name="Criar uma sessão no Serverest 07" owner="fluxo02">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:19.812594" level="INFO">Creating Session using : alias=Serverest, url=https://compassuol.serverest.dev, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Serverest</arg>
+<arg>${URL_Serverest}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T17:31:19.812436" elapsed="0.000350"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.812075" elapsed="0.000761"/>
+</kw>
+<kw name="Tentar fazer login com uma senha qualquer" owner="fluxo02">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-04T17:31:19.813425" level="INFO">${BODY} = {'email': ' bre10@qa.com', 'password': ' @'}</msg>
+<var>${BODY}</var>
+<arg>email= bre10@qa.com</arg>
+<arg>password= @</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.813302" elapsed="0.000141"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T17:31:20.236572" level="INFO">POST Request : url=https://compassuol.serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '44'} 
+ body=b'{"email": " bre10@qa.com", "password": " @"}' 
+ </msg>
+<msg time="2025-06-04T17:31:20.236753" level="INFO">POST Response : url=https://compassuol.serverest.dev/login 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'fc2e168bb1d279bbea303d3c756a9a75', 'date': 'Wed, 04 Jun 2025 20:31:20 GMT', 'server': 'Google Frontend', 'Content-Length': '50'} 
+ body={
+    "email": "email deve ser um email válido"
+} 
+ </msg>
+<msg time="2025-06-04T17:31:20.236874" level="INFO">C:\Users\breme\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T17:31:20.238066" level="INFO">${LOGIN} = &lt;Response [400]&gt;</msg>
+<var>${LOGIN}</var>
+<arg>Serverest</arg>
+<arg>/login</arg>
+<arg>json=${BODY}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T17:31:19.813504" elapsed="0.424677"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-04T17:31:20.239009" level="INFO">${LOGIN} = &lt;Response [400]&gt;</msg>
+<arg>${LOGIN}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-04T17:31:20.238609" elapsed="0.000503"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.813126" elapsed="0.426386"/>
+</kw>
+<kw name="Validar resposta 08" owner="fluxo02">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-04T17:31:20.243008" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${LOGIN.status_code}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-04T17:31:20.241456" elapsed="0.001895"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:20.240607" elapsed="0.003381"/>
+</kw>
+<status status="PASS" start="2025-06-04T17:31:19.810556" elapsed="0.434197"/>
+</test>
+<status status="FAIL" start="2025-06-04T17:31:16.892939" elapsed="3.353869"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Base01" id="s1" pass="5" fail="2" skip="0">Base01</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-04T17:31:16.925373" level="ERROR">Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Resources\fluxo01.robot' on line 2: Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Tests\base01.robot' on line 8: Resource file with 'Test Cases' section is invalid.</msg>
+<msg time="2025-06-04T17:31:17.266443" level="ERROR">Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Resources\fluxo02.robot' on line 2: Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint06\Challenge03\API_Serverest_Tests\Tests\base01.robot' on line 8: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>
