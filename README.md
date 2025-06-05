@@ -27,6 +27,6 @@
 
   ## 🚀 Sprint 06
 - **Semana 11**: Testes automatizados de APIs REST com Robot Framework - Aprofundando com AI e AWS
-- **Semana 12**: 
+- **Semana 12**: Challenge
 
 
