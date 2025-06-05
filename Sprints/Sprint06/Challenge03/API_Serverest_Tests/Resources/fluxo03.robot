@@ -1,20 +1,16 @@
 *** Settings ***
 Resource    ../Tests/base01.robot
-Library    RequestsLibrary
-Library    Collections
 
 *** Variables ***
-${URL_Serverest}    https://compassuol.serverest.dev
-&{HEADERS}          Content-Type=application/json
-${Nome_Produto}     Mouseum
 
-
-# Avalia o fluxo para cadaastrar um produto com nome único
 *** Keywords ***
+# Avalia o fluxo para cadastrar um produto com nome único
 Criar uma sessão no Serverest 08, com o token
     ${HEADER}=    Create Dictionary    Content-Type=application/json    Authorization=${TOKEN}
     Create Session    Serverest    ${URL_Serverest}    headers=${HEADER}    
 Cadastrar as informações do novo produto
+    ${Nome_Produto}=    FakerLibrary.Word
+    Set Global Variable    ${Nome_Produto}
     ${BODY}=    Create Dictionary    
     ...    nome=${Nome_Produto}
     ...    preco= 470
@@ -54,3 +50,19 @@ Tentar atualizar um produto com o nome do produto criado no C08
     Set Test Variable    ${Atualizacao}
 Validar resposta 11
     Should Be Equal As Integers    ${Atualizacao.status_code}    400
+
+# Teste para avaliar uma ação em um produto sem autenticação
+Criar uma sessão no Serverest 11
+    Create Session    Serverest    ${URL_Serverest}    headers=${HEADERS}
+Tentar cadastrar um produto sem autenticação
+    ${BODY}=    Create Dictionary    
+    ...    nome=Microfone
+    ...    preco= 470
+    ...    descricao= Microfone
+    ...    quantidade= 381
+    ${CADASTRO}=    Post On Session    Serverest    /produtos    json=${BODY}    expected_status=anything    
+    Set Test Variable    ${CADASTRO}
+Validar resposta 12
+    Should Be Equal As Integers    ${CADASTRO.status_code}    401
+    ${mensagem}=    Get From Dictionary    ${CADASTRO.json()}    message
+    Should Contain    ${mensagem}    Token de acesso ausente, inválido, expirado ou usuário do token não existe mais

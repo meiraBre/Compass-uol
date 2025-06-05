@@ -1,20 +1,19 @@
 *** Settings ***
 Resource    ../Tests/base01.robot
-Library    RequestsLibrary
-Library    Collections
 
 *** Variables ***
-${URL_Serverest}    https://compassuol.serverest.dev
-&{HEADERS}          Content-Type=application/json
-${NOME}             Fulano da Silva
-${EMAIL}            mirianii@qa.com
-${PASSWORD}         teste123
-${ADMINISTRADOR}    true
 
 *** Keywords ***
 #Avalia o fluxo de criação de um usuário válido
 Criar uma sessão no Serverest 01
     Create Session    Serverest    ${URL_Serverest}    headers=${HEADERS}
+Gerar dados do usuário
+    ${NOME}=    FakerLibrary.Name
+    ${EMAIL}=   FakerLibrary.Email
+    ${PASSWORD}=    FakerLibrary.Password
+    Set Suite Variable    ${NOME}
+    Set Suite Variable    ${EMAIL}
+    Set Suite Variable    ${PASSWORD}
 Cadastrar um usuário com as informações necessárias
     ${BODY}=    Create Dictionary
     ...    nome=${NOME}
@@ -42,7 +41,6 @@ Cadastrar um usuário com as mesmas informações do usuário anterior
     ${responses}=    Post on Session    Serverest    /usuarios    json=${BODY}    expected_status=anything   
     Set Global Variable    ${responses}
 Validar resposta 02
-#Espera status 400 pois está criando um usuário duplicado
     Should Be Equal As Integers    ${responses.status_code}    400
     ${mensagem}=    Get From Dictionary    ${responses.json()}    message
     Should Contain    ${mensagem}    Este email já está sendo usado
@@ -52,25 +50,29 @@ Validar resposta 02
 Criar uma sessão no Serverest 03
     Create Session    Serverest    ${URL_Serverest}    headers=${HEADERS}
 Cadastrar um usuário com uma senha de 4 caracteres
+    ${NOME01}=    FakerLibrary.Name
+    ${EMAIL01}=   FakerLibrary.Email
     ${BODY}=    Create Dictionary
-    ...    nome= Brendaa
-    ...    email= meiraa@qa.com.br
-    ...    password= 1234
-    ...    administrador= true
-    ${esponse}=    Post on Session    Serverest    /usuarios    json=${BODY}
+    ...    nome=${NOME01}
+    ...    email=${EMAIL01}
+    ...    password=1234
+    ...    administrador=true
+    ${response}=    Post on Session    Serverest    /usuarios    json=${BODY}
     Set Test Variable    ${response}
 Validar resposta 03 
     Should Be Equal As Integers    ${response.status_code}    400
 Cadastrar um usuário com uma senha de 11 caracteres
+    ${NOME02}=    FakerLibrary.Name
+    ${EMAIL02}=   FakerLibrary.Email
     ${BODY}=    Create Dictionary
-    ...    nome= Maria
-    ...    email= meira@qa.com.br
-    ...    password= 1234678901
-    ...    administrador= true
+    ...    nome=${NOME02}
+    ...    email=${EMAIL02}
+    ...    password=1234678901
+    ...    administrador=true
     ${Responses}=    Post on Session    Serverest    /usuarios    json=${BODY}
-    Set Test Variable    ${responses}
+    Set Test Variable    ${Responses}
 Validar resposta 04
-    Should Be Equal As Integers    ${Response.status_code}    400 
+    Should Be Equal As Integers    ${Responses.status_code}    400 
 
 #Tentar excluir um usuário com ID inexistente
 Criar uma sessão no Serverest 04
