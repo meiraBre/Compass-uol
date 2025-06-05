@@ -1,14 +1,7 @@
 *** Settings ***
 Resource    ../Tests/base01.robot
-Library    RequestsLibrary
-Library    Collections
 
 *** Variables ***
-${URL_Serverest}    https://compassuol.serverest.dev
-&{HEADERS}          Content-Type=application/json
-${EMAIL}            mirianii@qa.com
-${PASSWORD}         teste123
-${Nome_Produto}     Mouse
 
 *** Keywords ***
 # Avalia fluxo de realização de login com dados corretos

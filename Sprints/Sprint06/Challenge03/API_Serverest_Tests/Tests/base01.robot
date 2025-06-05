@@ -2,14 +2,23 @@
 Resource    ../Resources/fluxo01.robot
 Resource    ../Resources/fluxo02.robot
 Resource    ../Resources/fluxo03.robot
+Resource    ../Resources/fluxo04.robot
+
+Library    RequestsLibrary
+Library    Collections
+Library    FakerLibrary
 
 *** Variables ***
 ${URL_Serverest}    https://compassuol.serverest.dev
+&{HEADERS}          Content-Type=application/json
+${ADMINISTRADOR}    true
 
-*** Test Cases ***
+
+*** Test Cases ***  
 # 1. Fluxo Essencial de Cadastro e Validação de Usuário
 Cenário 01: Criar um usuário válido
     Criar uma sessão no Serverest 01
+    Gerar dados do usuário
     Cadastrar um usuário com as informações necessárias
     Validar a resposta 01
     Armazenar o ID do novo usuário
@@ -69,3 +78,31 @@ Cenário 11: Tentar realizar ação em produto sem autenticação
     Tentar cadastrar um produto sem autenticação
     Validar resposta 12
 
+
+# 4. Fluxo Essencial de Carrinho - Restrições e Manipulação
+Cenário 12: Criar um carrinho com produtos
+    Criar uma sessão no Serverest 12
+    Fazer um login do usuário
+    Armazenar e utilizar o token no header
+    Criar um produto e armazenar o ID
+    Criar um carrinho com os produtos
+    Validar resposta 13
+
+Cenário 13: Tentar criar um segundo carrinho para o mesmo usuário
+    Criar uma sessão no Serverest 13
+    Fazer um login do usuário do cadastro anterior
+    Armazenar e utilizar o token no header dele novamente
+    Tentar criar mais um carinho para esse usuário
+    Validar resposta 14
+
+Cenário 14: Excluir carrinho com produtos e verificar se os produtos retornam ao estoque
+    Criar uma sessão no Serverest 14
+    Fazer um login com o usuário do carrinho cadastrado
+    Armazenar e utilizar o token no header para a ação
+    Excluir o carrinho
+    Validar resposta 15
+
+    #${Nome_Produto}=    FakerLibrary.Word
+    #${Nome_Produto_Novo}=    FakerLibrary.Word
+    #Set Suite Variable    ${Nome_Produto}
+    #Set Suite Variable    ${Nome_Produto_Novo}
