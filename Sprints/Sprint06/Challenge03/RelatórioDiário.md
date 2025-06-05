@@ -37,3 +37,11 @@
 3. Fluxo Essencial de Cadastro e Manipulação de Produto
 - Melhoria de algumas questões do Planejamento de Testes (Descrição dos testes que seriam automatizados)
 
+## 📅 Dia 04  
+
+### ✅ Atividades Realizadas
+- Finalização dos testes automatizados com Robot
+4. Fluxo Essencial de Carrinho - Restrições e Manipulação
+- Melhorias nos códigos utilizando massas de dados dinâmicos (com Faker Library) ao invés de estáticos 
+- Finalização do refinamento do Planejamento de testes (adição do resumo dos testes automatizados)
+- Inicio da atividade extra solicitada na AWS
