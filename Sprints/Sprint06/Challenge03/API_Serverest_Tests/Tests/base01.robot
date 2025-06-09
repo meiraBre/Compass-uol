@@ -101,8 +101,3 @@ Cenário 14: Excluir carrinho com produtos e verificar se os produtos retornam a
     Armazenar e utilizar o token no header para a ação
     Excluir o carrinho
     Validar resposta 15
-
-    #${Nome_Produto}=    FakerLibrary.Word
-    #${Nome_Produto_Novo}=    FakerLibrary.Word
-    #Set Suite Variable    ${Nome_Produto}
-    #Set Suite Variable    ${Nome_Produto_Novo}
