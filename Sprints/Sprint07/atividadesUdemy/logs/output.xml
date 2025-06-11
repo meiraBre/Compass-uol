@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-11T17:26:42.058557" rpa="false" schemaversion="5">
+<suite id="s1" name="Signup" source="C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint07\atividadesUdemy\tests\signup.robot">
+<test id="s1-t1" name="Deve poder cadastrar um novo usuário" line="10">
+<kw name="Start Session" type="SETUP">
+<msg time="2025-06-11T17:26:42.100538" level="FAIL">No keyword with name 'Start Session' found.</msg>
+<status status="FAIL" start="2025-06-11T17:26:42.100147" elapsed="0.000449">No keyword with name 'Start Session' found.</status>
+</kw>
+<kw name="Take Screenshot" type="TEARDOWN">
+<msg time="2025-06-11T17:26:42.102732" level="FAIL">No keyword with name 'Take Screenshot' found.</msg>
+<status status="FAIL" start="2025-06-11T17:26:42.102672" elapsed="0.000114">No keyword with name 'Take Screenshot' found.</status>
+</kw>
+<status status="FAIL" start="2025-06-11T17:26:42.097133" elapsed="0.005789">Setup failed:
+No keyword with name 'Start Session' found.
+
+Also teardown failed:
+No keyword with name 'Take Screenshot' found.</status>
+</test>
+<test id="s1-t2" name="Não deve permitir o cadastro com email duplicado" line="22">
+<kw name="Start Session" type="SETUP">
+<msg time="2025-06-11T17:26:42.122377" level="FAIL">No keyword with name 'Start Session' found.</msg>
+<status status="FAIL" start="2025-06-11T17:26:42.122329" elapsed="0.000103">No keyword with name 'Start Session' found.</status>
+</kw>
+<kw name="Take Screenshot" type="TEARDOWN">
+<msg time="2025-06-11T17:26:42.123517" level="FAIL">No keyword with name 'Take Screenshot' found.</msg>
+<status status="FAIL" start="2025-06-11T17:26:42.123482" elapsed="0.000073">No keyword with name 'Take Screenshot' found.</status>
+</kw>
+<tag>dup</tag>
+<status status="FAIL" start="2025-06-11T17:26:42.121053" elapsed="0.002623">Setup failed:
+No keyword with name 'Start Session' found.
+
+Also teardown failed:
+No keyword with name 'Take Screenshot' found.</status>
+</test>
+<doc>Cenários de testes do cadastro de usuários</doc>
+<status status="FAIL" start="2025-06-11T17:26:42.061034" elapsed="0.063426"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">dup</stat>
+</tag>
+<suite>
+<stat name="Signup" id="s1" pass="0" fail="2" skip="0">Signup</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-11T17:26:42.095830" level="ERROR">Error in file 'C:\Users\breme\OneDrive\Área de Trabalho\Compass uol\Compass-uol\Sprints\Sprint07\atividadesUdemy\tests\signup.robot' on line 4: Resource file '..\resouces\base.robot' does not exist.</msg>
+</errors>
+</robot>
