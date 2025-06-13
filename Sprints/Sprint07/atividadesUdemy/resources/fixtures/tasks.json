@@ -1,10 +1,26 @@
 {
     "create": {
         "user": {
-
-        }
+            "name": "Steve Jobs",
+            "email": "jobs@apple.com",
+            "password": "pwb123"
+        },
         "task": {
-
+            "name": "Criar uma nova versão do ipod",
+            "tasks": ["ios", "music", "ipod"]
+        }
+    }
+},
+{
+    "duplicate": {
+        "user": {
+            "name": "Amanda Jobs",
+            "email": "manda@apple.com",
+            "password": "pwb123"
+        },
+        "task": {
+            "name": "Recrutar novos meta humanos",
+            "tasks": []
         }
     }
 }

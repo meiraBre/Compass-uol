@@ -2,7 +2,7 @@
 Documentation    Cenários de testes do cadastro de usuários
 
 Resource    ../resouces/base.resource
-
+Test Template    Short password
 Test Setup    Start Session
 Test Teardown    Take Screenshot
 
@@ -54,13 +54,45 @@ Não deve cadastrar com email incorreto
     ...        name=Charles Xavier
     ...        email=xavier.com.br
     ...        password=123456
+
+Não deve cadastrar com senhas muito curtas
+    @{password_list}    Create List    1    12    123    1234    12345
+    FOR    ${password}    Informe    @{password_list}
+        ${user}    Create Dictionary
+        ...    name=${EMPTY}
+        ...    email=${EMPTY}
+        ...    password=${password}
+    
+        Go to signup page
+        Submit signup form    ${user}
+
+        Alert should be    Informe uma senha com pelo menos 6 digitos
+    END
     
 Não deve cadastrar com senha de 1 dígito
     [Tags]    short_pass
     [Template]
-    Short password
+    Short password    1
 
+Não deve cadastrar com senha de 2 dígito
+    [Tags]    short_pass
+    [Template]
+    Short password    12
 
+Não deve cadastrar com senha de 3 dígito
+    [Tags]    short_pass
+    [Template]
+    Short password    123
+
+Não deve cadastrar com senha de 4 dígito
+    [Tags]    short_pass
+    [Template]
+    Short password    1234
+
+Não deve cadastrar com senha de 5 dígito
+    [Tags]    short_pass
+    [Template]
+    Short password    12345
 
 *** Keywords ***
 Short password

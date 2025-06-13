@@ -3,7 +3,7 @@ Documentation    Elementos e ações da págin de cadastro
 
 Library          Browser
 
-Resource        ../env.robot
+Resource        ../env.resource
 
 *** Keywords ***
 Go to signup page
@@ -18,7 +18,4 @@ Submit signup form
     Fill Text      css=input[name=password]    ${user}[password]
 
     Click          css=button[type=submit] >> text=Cadastrar
-Notice should be
-    [Arguments]    ${expected_text}
-    Wait For Elements State    css=.notice p    visible    5
-    Get Text                   css=.notice p    equal      ${expected_text}
+
