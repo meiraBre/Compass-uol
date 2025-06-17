@@ -1,0 +1,7 @@
+Semana 13 - Introdução Automação Web
+- Mapeamento de elementos Web
+- Robot Framework para Web
+
+Semana 14 - Aprofundando Automação Web + AI
+- Testes Automatizados Web - Em grupo (squad)
+- Realização de Code Review das demais Squads

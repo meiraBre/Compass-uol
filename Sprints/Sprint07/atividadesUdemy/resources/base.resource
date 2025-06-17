@@ -1,7 +1,7 @@
 *** Settings ***
 Library    libs/database.py
 Library    Browser
-Library         JSONLibrary
+Library    JSONLibrary
 
 Resource    env.resource
 
