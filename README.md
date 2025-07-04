@@ -33,7 +33,8 @@
 - **Semana 13**: Introdução Automação Web
 - **Semana 14**: Aprofundando Automação Web + AI
 
-
-
+## 🚀 Sprint 08
+- **Semana 14**: Challenge Final
+- **Semana 15**: Challenge Final
 
 
